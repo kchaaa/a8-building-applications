@@ -1,5 +1,6 @@
-# requires the library shiny
+# requires the library shiny and rsconnect
 library(shiny)
+library(rsconnect)
 
 # Creates the UI
 shinyUI(fluidPage(

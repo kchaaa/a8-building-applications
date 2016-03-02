@@ -1,6 +1,7 @@
-# Requires the libraries shiny.
+# Requires the libraries shiny, dplyr, and rsconnect.
 library(shiny)
 library(dplyr)
+library(rsconnect)
 
 # Brings in the 
 source('scripts/create_viz.R')
