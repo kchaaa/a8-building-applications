@@ -3,15 +3,21 @@ library(shiny)
 library(dplyr)
 library(rsconnect)
 
-# Brings in the 
-source('scripts/create_viz.R')
-
 # Reads in the dataset iris.
 data("iris")
 
-shinyServer(function(input, output) {
-  # Produces the graph for the ui.
+# Produces the graph for the ui.
+shinyServer(function(input, output) { 
+  
+  selectedData <- reactive({
+    iris[, c(input$xaxis, input$yaxis)]
+  })
+  
   output$graph <- renderPlotly({
-    create_viz(iris, input$radio, input$text)
+    plot_ly(data = selectedData(), x = input$xaxis, y = input$yaxis, mode = "markers") %>% 
+      layout(
+        xaxis = list(title = input$xaxis), 
+        yaxis = list(title = input$yaxis)
+      )
   })
 })
