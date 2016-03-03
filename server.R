@@ -1,6 +1,7 @@
 # Requires the libraries shiny, dplyr, and rsconnect.
 library(shiny)
 library(dplyr)
+library(plotly)
 library(rsconnect)
 
 # Reads in the dataset iris.

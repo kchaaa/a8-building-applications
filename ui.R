@@ -1,5 +1,6 @@
 # requires the library shiny and rsconnect
 library(shiny)
+library(plotly)
 library(rsconnect)
 
 # Creates the UI
